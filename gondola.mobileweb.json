@@ -1,0 +1,67 @@
+{
+  "tests": "./built/tests/bettyCrocker/loginSample.js",
+  "timeout": 10000,
+  "output": "./results",
+  "helpers": {
+    "Appium": {
+      "url": "https://www.bettycrocker.com/",
+      "require": "gondolajs/built/helper/AppiumEx",
+      "smartWait": 5000,
+      "platform": "Android",
+      "restart": false,
+      "browser": "chrome",
+      "port": 4723,
+      "timeouts": {
+        "script": 60000,
+        "page load": 30000
+      },
+      "desiredCapabilities": {
+        "automationName": "UiAutomator2",
+        "newCommandTimeout": 600,
+        "autoGrantPermissions": true,
+        "noReset": true,
+        "adbExecTimeout": 120000,
+        "browserName": "chrome",
+        "udid": "emulator-5554",
+        "nativeWebScreenshot": true,
+        "pageLoadStrategy": "eager",
+        "deviceName": "emulator",
+        "platformName": "android"
+      }
+    },
+    "Mochawesome": {}
+  },
+  "include": {},
+  "bootstrap": false,
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": true
+    },
+    "wdio": {
+      "services": [
+        "selenium-standalone"
+      ],
+      "enabled": true
+    }
+  },
+  "mocha": {
+    "reporterOptions": {
+      "reportDir": "results",
+      "inlineAssets": true,
+      "timestamp": "isoDateTime",
+      "reportFilename": "gondola",
+      "autoOpen": true,
+      "reportPageTitle": "Gondola Test Result"
+    }
+  },
+  "multiple": {
+    "parallel": {
+      "chunks": 2,
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
+    }
+  },
+  "name": "ts_example"
+}

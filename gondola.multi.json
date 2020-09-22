@@ -1,0 +1,77 @@
+{
+  "output": "./results",
+  "helpers": {
+    "Appium": {
+      "require": "./node_modules/gondolajs/built/helper/AppiumEx",
+      "smartWait": 5000,
+      "app": "/Volumes/DATA/Projects/Test/CarRental/AUT/CarRental.apk",
+        "desiredCapabilities": {
+          "platformName": "android",
+          "deviceName": "emulator"
+        }
+    },
+    "GondolaHelper": {
+      "require": "./node_modules/gondolajs/built/helper/gondolahelper"
+    }
+  },
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": "true"
+    },
+    "allure": {
+      "enabled": "true"
+    }
+  },
+  "mocha": {
+    "reporterOptions": {
+        "reportDir": "results/Demo",
+        "inlineAssets": true,
+        "overwrite" : false,
+        "timestamp": "isoDateTime",
+        "reportFilename": "[MultiAndroid]Demo_project",
+        "autoOpen": true,
+        "reportPageTitle": "[MultiAndroid]Demo_project"
+    }
+  },
+  "tests": "./built/tests/*/loginValidation.js",
+  "name": "SampleAndroidandiOS",
+  "multiple": {
+    "login": {
+      "outputName": "Demo",
+      "browsers": [
+        {
+          "require": "./node_modules/gondolajs/built/helper/AppiumEx",
+          "hostname": "hub-cloud.browserstack.com",
+          "port" : 80,
+          "app": "bs://56f4a1262043d57b5fc63d0fa093e782d4fda0ae",
+          "desiredCapabilities": {
+            "platformName": "android",
+            "deviceName": "Samsung Galaxy S10e",
+            "platformVersion": "9.0",
+            "bstack:options":{
+              "projectName" : "Demo project",
+              "buildName" : "Demo build",
+              "sessionName" : "Demo",
+              "appiumVersion" : "1.17.0",
+              "debug" : "true",
+              "userName" : "thanhnguyen74",
+              "accessKey" : "9S8Lqv74sJMAKjg7LiA4"
+            }
+          }
+        },
+        {
+          "browser": "android-emulator",
+          "app": "F:/GondolaProjects/demo/mobilesample/AUT/CarRental.apk",
+          "desiredCapabilities": {
+            "platformName": "android",
+            "deviceName": "emulator",
+            "udid": "emulator-5554",
+            "automationName": "UiAutomator2",
+            "systemPort": "8202",
+            "newCommandTimeout": 600
+          }
+        }
+      ]
+    }
+  }
+}

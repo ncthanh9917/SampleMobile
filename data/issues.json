@@ -1,0 +1,23 @@
+[
+    {
+        "header":{
+            "Authorization": "Basic bmN0aGFuaC50ZXN0QGdtYWlsLmNvbTpJVnB4bjlyMW5mQUVydGJrSHRBSDBFMTg=", 
+            "Content-Type": "application/json", 
+            "Cookie": "atlassian.xsrf.token=280201cc-103d-4d3c-94b1-bf845addd3a2_5a765af12069471c9a0bdbafebe643a2b840cf72_lin" 
+        },
+        "body":{
+            "key": "DEMO-6", 
+            "fields": { 
+                "summary":"Thanh cross platform test", 
+                "issuetype": { 
+                    "id": "10001" 
+                }, 
+                "project": { 
+                    "id": "10000", 
+                    "key": "DEMO", 
+                    "name": "Demo" 
+                } 
+            } 
+        }
+    }
+]

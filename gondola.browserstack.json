@@ -1,0 +1,36 @@
+{
+    "output": "./results",
+    "helpers": {
+      "Appium": {
+        "require": "./node_modules/gondolajs/built/helper/AppiumEx",
+        "hostname": "hub-cloud.browserstack.com",
+        "port" : 80,
+        "app": "bs://56f4a1262043d57b5fc63d0fa093e782d4fda0ae",
+        "desiredCapabilities": {
+          "platformName": "android",
+          "deviceName": "Samsung Galaxy S10e",
+          "platformVersion": "9.0",
+          "bstack:options":{
+            "projectName" : "Demo project",
+            "buildName" : "Demo build",
+            "sessionName" : "Demo",
+            "appiumVersion" : "1.17.0",
+            "debug" : "true",
+            "userName" : "thanhnguyen74",
+            "accessKey" : "9S8Lqv74sJMAKjg7LiA4"
+          }
+        }
+      },
+      "GondolaHelper": {
+        "require": "./node_modules/gondolajs/built/helper/gondolahelper"
+      }
+    },
+    "plugins": {
+      "screenshotOnFail": {
+        "enabled": "true"
+      },
+      "allure": {}
+    },
+    "tests": "./built/tests/carRental/login*.js",
+    "name": "SampleAndroid"
+  }

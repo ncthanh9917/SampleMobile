@@ -1,0 +1,25 @@
+{
+  "name": "mobilesample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf built",
+    "compile": "npm run clean && tsc",
+    "test:android": "./node_modules/.bin/gondola -c gondola.android.json run --steps --reporter mochawesome",
+    "test:emulator": "./node_modules/.bin/gondola -c gondola.emulator.json run --steps --reporter mochawesome",
+    "test:ios": "./node_modules/.bin/gondola -c gondola.ios.json run --steps --reporter mochawesome",
+    "test:multiandroid": "./node_modules/.bin/gondola -c gondola.multiandroid.json run-multiple --steps --all --reporter mochawesome",
+    "test:multi": "./node_modules/.bin/gondola -c gondola.multi.json run-multiple --steps --all --reporter mochawesome",
+    "test:browserstack": "./node_modules/.bin/gondola -c gondola.browserstack.json run --steps --reporter mochawesome",
+    "test:mobileweb": "./node_modules/.bin/gondola -c gondola.mobileweb.json run --steps --reporter mochawesome"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gondolajs": "./lib/gondolajs-1.6.64.tgz",
+    "mochawesome": "^4.1.0",
+    "rimraf": "3.0.2",
+    "selenium-standalone": "6.18.0"
+  }
+}

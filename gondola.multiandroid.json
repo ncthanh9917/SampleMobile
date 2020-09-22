@@ -1,0 +1,69 @@
+{
+  "output": "./results",
+  "helpers": {
+    "Appium": {
+      "require": "./node_modules/gondolajs/built/helper/AppiumEx",
+      "smartWait": 5000,
+      "app": "/Volumes/DATA/Projects/Test/CarRental/AUT/CarRental.apk",
+        "desiredCapabilities": {
+          "platformName": "android",
+          "deviceName": "emulator"
+        }
+    },
+    "GondolaHelper": {
+      "require": "./node_modules/gondolajs/built/helper/gondolahelper"
+    }
+  },
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": "true"
+    },
+    "allure": {
+      "enabled": "true"
+    }
+  },
+  "mocha": {
+    "reporterOptions": {
+        "reportDir": "results/Demo",
+        "inlineAssets": true,
+        "overwrite" : false,
+        "timestamp": "isoDateTime",
+        "reportFilename": "[MultiAndroid]Demo_project",
+        "autoOpen": true,
+        "reportPageTitle": "[MultiAndroid]Demo_project"
+    }
+  },
+  "tests": "./built/tests/*/loginValidation.js",
+  "name": "SampleAndroidandiOS",
+  "multiple": {
+    "login": {
+      "outputName": "Demo",
+      "browsers": [
+        {
+          "browser": "android-emulator",
+          "app": "F:/GondolaProjects/demo/mobilesample/AUT/CarRental.apk",
+          "desiredCapabilities": {
+            "platformName": "android",
+            "deviceName": "emulator",
+            "udid": "emulator-5556",
+            "automationName": "UiAutomator2",
+            "systemPort": "8201",
+            "newCommandTimeout": 600
+          }
+        },
+        {
+          "browser": "android-emulator",
+          "app": "F:/GondolaProjects/demo/mobilesample/AUT/CarRental.apk",
+          "desiredCapabilities": {
+            "platformName": "android",
+            "deviceName": "emulator",
+            "udid": "emulator-5554",
+            "automationName": "UiAutomator2",
+            "systemPort": "8202",
+            "newCommandTimeout": 600
+          }
+        }
+      ]
+    }
+  }
+}

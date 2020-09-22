@@ -1,0 +1,37 @@
+{
+  "output": "./results",
+  "helpers": {
+    "Appium": {
+      "require": "./node_modules/gondolajs/built/helper/AppiumEx",
+      "smartWait": 5000,
+      "app": "F:/GondolaProjects/demo/mobilesample/AUT/com.atlassian.android.jira.core_57000469_apps.evozi.com.apk",
+      "desiredCapabilities": {
+        "platformName": "android",
+        "deviceName": "emulator",
+        "udid": "emulator-5554",
+        "automationName": "UiAutomator2",
+        "appWaitActivity": "*",
+        "fullReset": "true",
+        "newCommandTimeout": 600
+      }
+    },
+    "Mochawesome": {}
+  },
+  "plugins": {
+    "screenshotOnFail": {
+      "enabled": "true"
+    }
+  },
+  "mocha": {
+    "reporterOptions": {
+        "reportDir": "results/Demo",
+        "inlineAssets": true,
+        "timestamp": "isoDateTime",
+        "reportFilename": "[Android]Demo_project",
+        "autoOpen": true,
+        "reportPageTitle": "[Android]Demo_project"
+    }
+  },
+  "tests": "./built/tests/cross-platform-demo/*.js",
+  "name": "SampleAndroid"
+}
